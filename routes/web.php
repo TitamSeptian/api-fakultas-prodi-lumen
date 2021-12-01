@@ -17,8 +17,8 @@
 //     $key = \Illuminate\Support\Str::random(32);
 //     return $key;
 // });
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
 $router->get("/fakultas-prodi", "FakultasProdiController@getFakultasProdi");
+$router->get("/fakultas", "FakultasProdiController@getFakultas");
+$router->get("/fakultas/{namaFakultas}/prodi", "FakultasProdiController@getProdiByFakultas");
+$router->get("/prodi", "FakultasProdiController@getProdi");
+$router->get("/prodi/{kodeProdi}", "FakultasProdiController@getProdiByKode");
